@@ -1,4 +1,4 @@
-import BaseHTTPServer
+import http.server.HTTPServer
 
 HOST_NAME = 'localhost'
 PORT_NUMBER = 8080
