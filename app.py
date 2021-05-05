@@ -1,19 +1,21 @@
-"""
-Main application file
-"""
-from flask import Flask
-import logging
-app = Flask(__name__)
-#abc
-# Initialize Logger
-LOGGER = logging.getLogger()
-LOGGER.setLevel(logging.INFO)
+import BaseHTTPServer
 
-@app.route('/<random_string>')
-def returnBackwardsString(random_string):
-    """Reverse and return the provided URI"""
-    LOGGER.info('Received a message: %s', random_string)
-    return "".join(reversed(random_string))
+HOST_NAME = 'localhost'
+PORT_NUMBER = 8080
+
+class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
+    def do_GET(s):
+        s.send_response(200)
+        s.send_header("Content-type", "text/text")
+        s.end_headers()
+        s.wfile.write("Hello World")
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    server_class = BaseHTTPServer.HTTPServer
+    httpd = server_class((HOST_NAME, PORT_NUMBER), MyHandler)
+    try:
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        pass
+    httpd.server_close()
+
