@@ -19,7 +19,7 @@
         }
     ],
     "volumes": [],
-    "networkMode": "awsvpc",
+    "networkMode": "host",
     "memory": "512",
     "cpu": "256",
     "executionRoleArn": "arn:aws:iam::674143463261:role/ecs-devops-sandbox-execution-role",
