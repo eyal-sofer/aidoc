@@ -1,6 +1,6 @@
 FROM python:3
 # Set application working directory
-ADD app.py
+ADD app.py /
 # Install requirements
 RUN pip install flask
 RUN pip install flask_restful
