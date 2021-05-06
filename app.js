@@ -2,15 +2,6 @@ const express = require("express");
 const port = 80;
 const app = express();
 const path = require("path");
-const publicDir = path.join(__dirname, "public");
-
-// get container IP
-getContainerIP("ecs-devops-sandbox-service").then(ip=>{
-    console.log("Container IP address is: " + ip);
-
-}).catch(err=>{
-    console.log(err);
-});
 
 function getContainerIP(servicename){
     // note: assumes that only 1 task with 1 container is in the provided service, and that a container only has 1 network interface
@@ -113,6 +104,13 @@ function getContainerIP(servicename){
     });
 }
 
+// get container IP
+getContainerIP("ecs-devops-sandbox-service").then(ip=>{
+    console.log("Container IP address is: " + ip);
+
+}).catch(err=>{
+    console.log(err);
+});
 
 app.get('/myapp/', function(req, res){
     res.send("Hello from the root application URL");
