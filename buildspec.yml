@@ -7,4 +7,4 @@ phases:
     commands:
       - pip install -r requirements.txt
       - printenv
-      - python app_test.py $(CODEBUILD_BUILD_NUMBER)
+      - python app_test.py $CODEBUILD_BUILD_NUMBER
