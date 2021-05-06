@@ -4,6 +4,7 @@ ADD app.py /
 # Install requirements
 RUN pip install flask
 RUN pip install flask_restful
+RUN pip install sys
 # Install application
 EXPOSE 80
 # Run application
