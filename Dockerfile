@@ -7,4 +7,4 @@ RUN pip install flask_restful
 # Install application
 EXPOSE 80
 # Run application
-CMD python app.py ${{ GITHUB_RUN_NUMBER }}
+CMD python app.py $GITHUB_RUN_NUMBER
