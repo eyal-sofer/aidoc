@@ -6,4 +6,5 @@ phases:
   pre_build:
     commands:
       - pip install -r requirements.txt
+      - printenv
       - python app_test.py $(CODEBUILD_BUILD_NUMBER)
