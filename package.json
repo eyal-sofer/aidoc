@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/austinloveless/Docker-on-AWS#readme",
   "dependencies": {
+    "aws-sdk": "^2.902.0",
     "express": "^4.17.1"
   }
 }

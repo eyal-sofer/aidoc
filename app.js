@@ -1,8 +1,13 @@
+
 const express = require("express");
-const port = 80;
+const port = 8091;
 const app = express();
 const path = require("path");
-
+var AWS = require("aws-sdk")
+//set region
+AWS.config.update({region: "us-east-2"});
+//set credentials
+AWS.config.update({accessKeyId: "AKIAZZ5QU45OUVZT5F7K", secretAccessKey: "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"});
 function getContainerIP(servicename){
     // note: assumes that only 1 task with 1 container is in the provided service, and that a container only has 1 network interface
 
@@ -11,6 +16,7 @@ function getContainerIP(servicename){
       // get task arns (needs a delay because we just launched it)
       setTimeout(getTasks, 6000);
 
+      var ecs = new AWS.ecs();
       // get task arns
       function getTasks(){
         ecs.listTasks({
