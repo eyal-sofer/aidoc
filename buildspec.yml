@@ -6,4 +6,4 @@ phases:
   pre_build:
     commands:
       - pip install -r requirements.txt
-      - python app_test.py CODEBUILD_BUILD_ID
+      - python app_test.py ${CODEBUILD_BUILD_ID}
