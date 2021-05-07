@@ -7,7 +7,7 @@ api = Api(app)
 
 class Hello(Resource):
     def get(self):
-        return 'Hello World,  + os.environ['BUILD_NUM']'
+        return 'Hello World, ' + os.environ['RUN_NUM']
     
 api.add_resource(Hello, '/')
 
