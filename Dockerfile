@@ -6,5 +6,7 @@ RUN pip install flask
 RUN pip install flask_restful
 # Install application
 EXPOSE 80
+#define Env variable
+ENV BUILD_NUM=${BUILD_NUM:-NOT_DEFINED}
 # Run application
 CMD python app.py
