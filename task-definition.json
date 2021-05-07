@@ -16,6 +16,12 @@
                     "protocol": "tcp"
                 }
                 
+            ],
+            "environment": [
+                {
+                    "name": "BUILD_NUM",
+                    "value": "something.cloud.com"
+                }
             ]
         }
     ],
