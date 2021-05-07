@@ -20,7 +20,7 @@
             "environment": [
                 {
                     "name": "BUILD_NUM",
-                    "value": "something.cloud.com"
+                    "value": "$GITHUB_RUN_NUMBER"
                 }
             ]
         }
