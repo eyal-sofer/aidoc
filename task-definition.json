@@ -16,12 +16,6 @@
                     "protocol": "tcp"
                 }
                 
-            ],
-            "environment": [
-                {
-                    "name": "BUILD_NUM",
-                    "value": "$GITHUB_RUN_NUMBER"
-                }
             ]
         }
     ],
