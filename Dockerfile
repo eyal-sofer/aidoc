@@ -10,4 +10,8 @@ COPY . .
 
 LABEL maintainer="Eyal Sofer"
 
+#define Env variable
+ARG RUN_NUM
+ENV BUILD_NUM=$RUN_NUM
+
 CMD node app.js
