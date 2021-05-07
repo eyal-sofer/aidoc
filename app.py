@@ -7,7 +7,7 @@ api = Api(app)
 
 class Hello(Resource):
     def get(self):
-        return 'Hello World, ' + sys.argv[0]
+        return 'Hello World, ' + $BUILD_NUM
     
 api.add_resource(Hello, '/')
 
