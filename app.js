@@ -8,5 +8,5 @@ app.get('/myapp/', function(req, res){
     res.send("Hello World, "+ process.env.BUILD_NUM);
 });
 
-app.listen(port, () => console.log('Application is running'));
+app.listen(port, () => console.log('Application is running now'));
 
